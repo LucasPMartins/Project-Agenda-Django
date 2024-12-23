@@ -4,20 +4,21 @@ from contact.models import Contact
 from django.core.exceptions import ValidationError
 
 class ContactForm(forms.ModelForm):
+    picture = forms.ImageField(
+        widget=forms.FileInput(
+            attrs={
+                'accept': 'image/*',
+            }
+        )
+    )
     first_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                # 'class': 'classe-a classe-b',
                 'placeholder': 'Escreva seu primeiro nome',
             }
         ),
-        # label='Primeiro Nome',
         help_text='Nome do contato',
     )
-
-    def __ini__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        # self.fields['first_name'].widget.attrs.update({'placeholder': 'Escreva seu nome'})
 
     class Meta:
         model = Contact
@@ -28,9 +29,7 @@ class ContactForm(forms.ModelForm):
                   'description',
                   'category',
                   'picture',)
-        # widgets = {
-        #     'first_name': forms.TextInput(attrs={'placeholder': 'Escreva seu nome'}),
-        # }
+ 
 
     def clean(self):
         cleaned_data = self.cleaned_data
