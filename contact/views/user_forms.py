@@ -29,6 +29,7 @@ def user_update(request):
         form = RegisterUpdateForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
+            auth.login(request, request.user)
             messages.success(request, 'User updated successfully')
 
     return render(request,'contact/user_update.html',{'form': form})

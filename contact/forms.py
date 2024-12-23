@@ -108,38 +108,41 @@ class RegisterForm(UserCreationForm):
     
 class RegisterUpdateForm(forms.ModelForm):
     first_name = forms.CharField(
-        required=True,
         min_length=2,
-        max_length=50,
+        max_length=30,
+        required=True,
+        help_text='Required.',
         error_messages={
-            'required': 'This field is required',
-            'min_length': 'This field must contain at least 2 characters',
-            'max_length': 'This field must contain at most 50 characters',
+            'min_length': 'Please, add more than 2 letters.'
         }
     )
     last_name = forms.CharField(
-        required=True,
         min_length=2,
-        max_length=50,
-        error_messages={
-            'required': 'This field is required',
-            'min_length': 'This field must contain at least 2 characters',
-            'max_length': 'This field must contain at most 50 characters',
-        }
-    )
-    email = forms.EmailField(
+        max_length=30,
         required=True,
-        error_messages={
-            'required': 'This field is required',
-            'invalid': 'This field must contain a valid email address',
-        }
+        help_text='Required.'
     )
-    
+    password1 = forms.CharField(
+        label="Password",
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+        help_text=password_validation.password_validators_help_text_html(),
+        required=False,
+    )
+    password2 = forms.CharField(
+        label="Password 2",
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+        help_text='Use the same password as before.',
+        required=False,
+    )
     class Meta:
         model = User
-        fields = ('first_name', 'last_name','email',
-                'username',
-                )
+        fields = (
+            'first_name', 'last_name', 'email',
+            'username',
+        )
+
     def save(self, commit = True):
         cleaned_data = self.cleaned_data
         user = super().save(commit=False)
@@ -151,6 +154,8 @@ class RegisterUpdateForm(forms.ModelForm):
 
         if commit:
             user.save()
+        
+        return user
 
     def clean(self):
         password1 = self.cleaned_data.get('password1')
