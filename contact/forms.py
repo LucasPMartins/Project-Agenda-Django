@@ -1,7 +1,8 @@
 from django import forms
-from contact.models import Contact
-
 from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from contact.models import Contact
 
 class ContactForm(forms.ModelForm):
     picture = forms.ImageField(
@@ -17,7 +18,15 @@ class ContactForm(forms.ModelForm):
                 'placeholder': 'Escreva seu primeiro nome',
             }
         ),
-        help_text='Nome do contato',
+        help_text='Required. 50 characters or fewer.',
+    )
+    phone = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Escreva seu telefone',
+            }
+        ),
+        help_text='Required. 20 characters or fewer.',
     )
 
     class Meta:
@@ -51,3 +60,47 @@ class ContactForm(forms.ModelForm):
         if first_name == 'admin':
             raise ValidationError('Invalid first name')
         return first_name
+
+class RegisterForm(UserCreationForm):
+    first_name = forms.CharField(
+        required=True,
+        min_length=2,
+        max_length=50,
+        error_messages={
+            'required': 'This field is required',
+            'min_length': 'This field must contain at least 2 characters',
+            'max_length': 'This field must contain at most 50 characters',
+        }
+    )
+    last_name = forms.CharField(
+        required=True,
+        min_length=2,
+        max_length=50,
+        error_messages={
+            'required': 'This field is required',
+            'min_length': 'This field must contain at least 2 characters',
+            'max_length': 'This field must contain at most 50 characters',
+        }
+    )
+    email = forms.EmailField(
+        required=True,
+        error_messages={
+            'required': 'This field is required',
+            'invalid': 'This field must contain a valid email address',
+        }
+    )
+    
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name','email',
+                'username', 'password1', 'password2'
+                )
+    
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            self.add_error(
+                'email',
+                ValidationError('Email already exists in the database, please choose another one',code='invalid')
+                )
+        return email
