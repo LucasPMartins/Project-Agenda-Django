@@ -152,4 +152,6 @@ This is a Django-based web application for managing contacts. It allows users to
 ![CSS3](https://img.shields.io/badge/css3-0D1117?style=for-the-badge&logo=css3&logoColor=%231572B6)
 ![HTML5](https://img.shields.io/badge/html5-0D1117?style=for-the-badge&logo=html5&logoColor=%23E34F26)
 
+<img width=100% src="https://github.com/user-attachments/assets/b148c05e-d8c4-4d02-a847-a2684c68ec15" />
+
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=1e81b0&height=120&section=footer"/>
