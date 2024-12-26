@@ -16,7 +16,7 @@ class ContactForm(forms.ModelForm):
     first_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Escreva seu primeiro nome',
+                'placeholder': 'Write your first name',
             }
         ),
         help_text='Required. 50 characters or fewer.',
@@ -24,7 +24,7 @@ class ContactForm(forms.ModelForm):
     phone = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Escreva seu telefone',
+                'placeholder': 'Write your phone number',
             }
         ),
         help_text='Required. 20 characters or fewer.',
@@ -48,7 +48,7 @@ class ContactForm(forms.ModelForm):
 
         if first_name == last_name:
             msg = ValidationError(
-                'Primeiro nome não pode ser igual ao segundo',
+                'Fist name and last name cannot be the same',
                 code='invalid'
             )
             self.add_error('first_name', msg)
@@ -105,7 +105,7 @@ class RegisterForm(UserCreationForm):
                 ValidationError('Email already exists in the database, please choose another one',code='invalid')
                 )
         return email
-    
+
 class RegisterUpdateForm(forms.ModelForm):
     first_name = forms.CharField(
         min_length=2,
