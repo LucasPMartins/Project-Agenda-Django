@@ -16,7 +16,8 @@ This is a Django-based web application for managing contacts. It allows users to
 - [Forms](#forms)
 - [Templates](#templates)
 - [Static Files](#static-files)
-- [License](#license)
+- [Tools](#-tools)
+- [Languages](#-languages)
 
 ## Features
 
@@ -111,7 +112,6 @@ This is a Django-based web application for managing contacts. It allows users to
 ├── db.sqlite3
 ├── manage.py
 ├── README.md
-└── LICENSE
 ```
 
 ## Models
@@ -139,10 +139,6 @@ This is a Django-based web application for managing contacts. It allows users to
 
 - **style.css**: CSS file for styling the application.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](http://_vscodecontentref_/0) file for details.
-
 ## 🛠 Tools:
 ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-0D1117?style=for-the-badge&logo=visual-studio-code&logoColor=007ACC&labelColor=0D1117)
 ![Git](https://img.shields.io/badge/-Git-0D1117?style=for-the-badge&logo=git&labelColor=0D1117)
@@ -154,6 +150,6 @@ This project is licensed under the MIT License. See the [LICENSE](http://_vscode
 ## 👨‍💻 Languages
 ![Python](https://img.shields.io/badge/python-0D1117?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![CSS3](https://img.shields.io/badge/css3-0D1117?style=for-the-badge&logo=css3&logoColor=%231572B6)
-![HTML5](https://img.shields.io/badge/html5-0D1117?style=for-the-badge&logo=html5&logoColor=%23E34F26.svg)
+![HTML5](https://img.shields.io/badge/html5-0D1117?style=for-the-badge&logo=html5&logoColor=%23E34F26)
 
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=1e81b0&height=120&section=footer"/>
