@@ -2,7 +2,7 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=JetBrains+Mono&color=1e81b0&size=45&center=true&vCenter=true&width=1000&lines=Project+Agenda)](https://git.io/typing-svg)
 
-# Contact Management System
+## Contact Management System
 
 This is a Django-based web application for managing contacts. It allows users to create, update, delete, and search for contacts. Each contact can have a picture, and users can register, log in, and manage their profiles.
 
