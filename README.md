@@ -6,12 +6,13 @@
 
 This is a Django-based web application for managing contacts. It allows users to create, update, delete, and search for contacts. Each contact can have a picture, and users can register, log in, and manage their profiles.
 
+<img width=100% src="https://github.com/user-attachments/assets/b148c05e-d8c4-4d02-a847-a2684c68ec15" />
+
 ## Table of Contents
 
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Models](#models)
 - [Forms](#forms)
 - [Templates](#templates)
@@ -74,46 +75,6 @@ This is a Django-based web application for managing contacts. It allows users to
 - **View Contacts**: View the list of contacts at `http://127.0.0.1:8000`.
 - **Search Contacts**: Search for contacts using the search bar on the homepage.
 
-## Project Structure
-
-```
-.
-├── base_static/
-│   └── global/
-│       └── css/
-│           └── style.css
-├── base_templates/
-│   └── global/
-│       ├── base.html
-│       └── partials/
-├── contact/
-│   ├── migrations/
-│   ├── templates/
-│   ├── views/
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── models.py
-│   ├── tests.py
-│   ├── urls.py
-│   └── views/
-├── media/
-├── project/
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── static/
-├── utils/
-│   └── create_contacts.py
-├── venv/
-├── db.sqlite3
-├── manage.py
-├── README.md
-```
-
 ## Models
 
 - **Category**: Represents a category for contacts.
@@ -151,7 +112,5 @@ This is a Django-based web application for managing contacts. It allows users to
 ![Python](https://img.shields.io/badge/python-0D1117?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![CSS3](https://img.shields.io/badge/css3-0D1117?style=for-the-badge&logo=css3&logoColor=%231572B6)
 ![HTML5](https://img.shields.io/badge/html5-0D1117?style=for-the-badge&logo=html5&logoColor=%23E34F26)
-
-<img width=100% src="https://github.com/user-attachments/assets/b148c05e-d8c4-4d02-a847-a2684c68ec15" />
 
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=1e81b0&height=120&section=footer"/>
