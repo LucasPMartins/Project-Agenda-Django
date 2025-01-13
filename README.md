@@ -33,7 +33,7 @@ This is a Django-based web application for managing contacts. It allows users to
 
 1. Clone the repository:
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/LucasPMartins/Project-Agenda-Django.git
     cd <repository-directory>
     ```
 
